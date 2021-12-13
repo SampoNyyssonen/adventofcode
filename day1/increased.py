@@ -1,5 +1,5 @@
 
-f = open("numerot.txt", "r")
+f = open("day1/numerot.txt", "r")
 oldNumber = f.readline()
 count = 0
 for number in f:
@@ -7,4 +7,4 @@ for number in f:
         count +=1
         print("num" + number + "oldnum" + oldNumber)
     oldNumber = number
-
+print(count)
