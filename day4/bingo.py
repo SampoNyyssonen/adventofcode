@@ -48,13 +48,25 @@ for number in numberArray:
                     winNumber = number
                     print("voittotable: " + str(wintable))
                     #TODO voitto
-            table_T = table
+            table_T = [ [ 0 for i in range(5) ] for j in range(5) ]
             for l in range(len(table)):
+                row = []
                 for k in range(len(table[0])):
                     table_T[k][l] = table[l][k]
+                #table_T.append(row)
             for j, row in enumerate(table):
                 if table_T[j][0] == table_T[j][1] == table_T[j][2] == table_T[j][3] == table_T[j][4]:
                     #pystyrivivoitto
                     wintable = table
                     winNumber = number
                     print("voittotable2: " + str(wintable))
+sumvalue = 0
+i = 0
+j = 0
+print("voittotable3: " + str(wintable))
+for i, row in enumerate(wintable):
+    for j, cell in enumerate(wintable[i]):
+        sumvalue += wintable[i][j]
+print(str(sumvalue) + "\n"+ str(winNumber))
+print(sumvalue*winNumber)
+
