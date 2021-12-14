@@ -1,4 +1,5 @@
 verpos = 0
+aim = 0
 horpos = 0
 f = open("day2/2.txt", "r")
 for order in f:
@@ -6,11 +7,12 @@ for order in f:
     cmd = order[0:spacepos]
     value = order[spacepos+1:len(order)]
     if cmd == "up":
-        verpos -= int(value)
+        aim -= int(value)
     elif cmd == "down":
-        verpos += int(value)
+        aim += int(value)
     elif cmd == "forward":
         horpos += int(value)
+        verpos += aim*int(value)
     elif cmd == "backward":
         horpos -= int(value)
 

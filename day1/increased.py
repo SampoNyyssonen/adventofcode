@@ -1,10 +1,17 @@
 
 f = open("day1/numerot.txt", "r")
-oldNumber = f.readline()
+olderNumber = int(f.readline())
+oldNumber = int(f.readline())
+number = int(f.readline())
+oldSum = olderNumber + oldNumber + number
 count = 0
 for number in f:
-    if int(number) > int(oldNumber):
+    sum = olderNumber + oldNumber + int(number)
+    if sum > oldSum:
         count +=1
-        print("num" + number + "oldnum" + oldNumber)
-    oldNumber = number
+        ##print("num" + number + "oldnum" + oldNumber)
+    oldSum = sum
+    olderNumber = oldNumber
+    oldNumber = int(number)
+    
 print(count)
